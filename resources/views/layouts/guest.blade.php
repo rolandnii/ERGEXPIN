@@ -13,21 +13,21 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
          --}}
 
-    @include('"includes.head')
+    @include('includes.head')
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="font-sans antialiased">
     <!-- Page Content -->
     <div class="container-scroller">
-        @include("includes.navbar")
-        @include("includes.sidebar")
-        {{ $slot }}
-        @include("includes.footer")
+        <div class="container-fluid page-body-wrapper full-page-wrapper">
+            {{ $slot }}
+        </div>
+        @include('includes.footer')
     </div>
-    @include("includes.script")
+    @include('includes.script')
     @stack('scripts')
 </body>
+
 </html>
