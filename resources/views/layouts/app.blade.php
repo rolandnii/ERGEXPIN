@@ -23,14 +23,18 @@
     <!-- Page Content -->
     <div class="container-scroller">
         @include('includes.navbar')
-        @include('includes.sidebar')
-        <div class="main-panel">
-            <div class="content-wrapper">
-                {{ $slot }}
-            </div>
-        </div>
+        <div class="container-fluid page-body-wrapper">
 
-        @include('includes.footer')
+            @include('includes.sidebar')
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    {{ $slot }}
+                </div>
+                {{-- @include('includes.footer') --}}
+
+            </div>
+
+        </div>
     </div>
     @include('includes.script')
     @stack('scripts')

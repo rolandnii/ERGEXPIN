@@ -11,15 +11,20 @@
           </div>
           <h4>Hello! let's get started</h4>
           <h6 class="font-weight-light">Sign in to continue.</h6>
-          <form class="pt-3">
+          <form class="pt-3" action="{{ route('login') }}" method="POST">
+            @csrf
             <div class="form-group">
-              <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+              <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email">
+              <x-input-error :messages="$errors->get('email')" class="mt-2 text-danger" />
+
             </div>
             <div class="form-group">
               <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+              <x-input-error :messages="$errors->get('email')" class="mt-2 text-danger" />
+
             </div>
             <div class="mt-3">
-              <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">SIGN IN</a>
+              <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" >SIGN IN</button>
             </div>
             <div class="my-2 d-flex justify-content-between align-items-center">
               <div class="form-check">
@@ -35,6 +40,12 @@
                 <i class="ti-facebook mr-2"></i>Connect using facebook
               </button>
             </div> --}}
+            <div class="block mt-4">
+              <label for="remember_me" class="inline-flex items-center">
+                  <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
+                  <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+              </label>
+          </div>
             <div class="text-center mt-4 font-weight-light">
               Don't have an account? <a href="{{ url('/register') }}" class="text-primary">Create</a>
             </div>
