@@ -12,36 +12,34 @@
               </div>
               <h4>New here?</h4>
               <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
-              <form class="pt-3">
+              <form class="pt-3" method="POST" action="{{ route('register') }}">
+                @csrf
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Username">
+                  <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" value="{{ old('name') }}" placeholder="Full Name" name="name" required autofocus>
+                  <x-input-error :messages="$errors->get('name')" class="mt-2 text-danger" />
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email">
+                  <input type="email" class="form-control form-control-lg" name="email" value="{{ old('email') }}" id="exampleInputEmail1" placeholder="Email" >
+                 <x-input-error :messages="$errors->get('email')" class="mt-2 text-danger" />
+
                 </div>
                 <div class="form-group">
-                  <select class="form-control form-control-lg" id="exampleFormControlSelect2">
-                    <option>Country</option>
-                    <option>United States of America</option>
-                    <option>United Kingdom</option>
-                    <option>India</option>
-                    <option>Germany</option>
-                    <option>Argentina</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                  <input type="password" class="form-control form-control-lg" name="password" value="{{ old('password') }}" id="exampleInputPassword1" placeholder="Password" >
+            <x-input-error :messages="$errors->get('password')" class="mt-2 text-danger" />
+
                 </div>
                 <div class="mb-4">
                   <div class="form-check">
                     <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input">
+                      <input type="checkbox" name="agree" value="{{ old('agree') }}" class="form-check-input">
                       I agree to all Terms & Conditions
                     </label>
+            <x-input-error :messages="$errors->get('agree')" class="mt-2 text-danger" />
+
                   </div>
                 </div>
                 <div class="mt-3">
-                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">SIGN UP</a>
+                <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">SIGN UP</button>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
                   Already have an account? <a href="{{ url('login') }}" class="text-primary">Login</a>
@@ -60,7 +58,7 @@
         <!-- Name -->
         <div>
             <x-input-label for="fname" :value="__('First Name')" />
-            <x-text-input id="fname" class="block mt-1 w-full" type="text" name="fname" :value="old('fname')" required autofocus autocomplete="name" />
+            <x-text-input id="fname" class="block mt-1 w-full" type="text" name="fname" :value="old('fname')"  autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('fname')" class="mt-2" />
         </div>
 

@@ -24,7 +24,7 @@
         <div class="container-fluid page-body-wrapper full-page-wrapper">
             {{ $slot }}
         </div>
-        @include('includes.footer')
+        {{-- @include('includes.footer') --}}
     </div>
     @include('includes.script')
     @stack('scripts')
