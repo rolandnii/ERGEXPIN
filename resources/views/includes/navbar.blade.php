@@ -79,10 +79,10 @@
             </a>
             <a class="dropdown-item">
             
-             <form action="{{ url('logout') }}" method="POST">
+             <form action="{{ url('logout') }}" method="POST" >
               @csrf
               <input type="submit" id="LogoutBtn" hidden>
-              <label for="LogoutBtn"><i class="ti-power-off text-primary"></i>Logout</label>
+              <label for="LogoutBtn" style="cursor: pointer;"><i class="ti-power-off text-primary"></i>Logout</label>
             </form>
             </a>
           </div>
