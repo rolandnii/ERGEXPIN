@@ -26,7 +26,7 @@
             <div class="mt-3">
               <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" >SIGN IN</button>
             </div>
-            <div class="my-2 d-flex justify-content-between align-items-center">
+            {{-- <div class="my-2 d-flex justify-content-between align-items-center">
               <div class="form-check">
                 <label class="form-check-label text-muted">
                   <input type="checkbox" class="form-check-input">
@@ -34,7 +34,7 @@
                 </label>
               </div>
               <a href="#" class="auth-link text-black">Forgot password?</a>
-            </div>
+            </div> --}}
             {{-- <div class="mb-2">
               <button type="button" class="btn btn-block btn-facebook auth-form-btn">
                 <i class="ti-facebook mr-2"></i>Connect using facebook
