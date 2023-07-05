@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    .sidebar .nav .nav-item .nav-link.hover:hover{ 
+        @apply transition-colors duration-300 ease-out
+    }
+}

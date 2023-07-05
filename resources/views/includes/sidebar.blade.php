@@ -1,34 +1,47 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link">
+      <li class="nav-item {{ request()->routeIs('dashboard') ? 'active' : ''}}">
+        <a class="nav-link hover " href="{{ url('/') }}">
           <i class="icon-grid menu-icon"></i>
           <span class="menu-title">Dashboard</span>
         </a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" >
-          <i class="icon-grid menu-icon"></i>
-          <span class="menu-title">Dashboard</span>
+      <li class="nav-item {{ request()->routeIs('income') ? 'active' : ''}}">
+        <a class="nav-link hover" href="{{ url('#') }}" >
+          <i class="icon-paper menu-icon"></i>
+          <span class="menu-title">Income</span>
         </a>
       </li>
-      {{-- <li class="nav-item">
-        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-          <i class="icon-layout menu-icon"></i>
-          <span class="menu-title">UI Elements</span>
-          <i class="menu-arrow"></i>
+
+      <li class="nav-item {{ request()->routeIs('income') ? 'active' : ''}}">
+        <a class="nav-link hover" href="{{ url('#') }}" >
+          <i class="icon-contract menu-icon"></i>
+          <span class="menu-title">Expense</span>
         </a>
-        <div class="collapse" id="ui-basic">
-          <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
-          </ul>
-        </div>
-      </li> --}}
-      
+      </li>
+    
     </ul>
   </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   {{-- <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">

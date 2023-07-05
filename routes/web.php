@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['auth','verified'])->group( function () {
-    Route::get('/',[RouteController::class,'ShowDashboard'])->name("home");
+    Route::get('/',[RouteController::class,'ShowDashboard'])->name("dashboard");
     Route::get('/dashboard',[RouteController::class,'ShowDashboard'])->name('dashboard');
 });
 
