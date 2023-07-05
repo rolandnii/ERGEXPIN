@@ -29,7 +29,7 @@
                 <div class="content-wrapper">
                     {{ $slot }}
                 </div>
-                {{-- @include('includes.footer') --}}
+                @include('includes.footer')
             </div>
         </div>
     </div>
