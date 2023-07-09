@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('expense_income', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+        // Schema::create('expense_types', function (Blueprint $table) {
+        //     $table->uuid('id')->primary()->index('expType');
+        //     $table->string('label');
+        //     $table->timestamps();
+        //     $table->softDeletes();
+        // });
     }
 
     /**
@@ -22,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('expense_income');
+        // Schema::dropIfExists('expense_types');
     }
 };
