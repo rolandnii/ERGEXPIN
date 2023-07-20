@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth','verified'])->group( function () {
     Route::get('/',[RouteController::class,'ShowDashboard'])->name("dashboard");
     Route::get('/dashboard',[RouteController::class,'ShowDashboard'])->name('dashboard');
+    Route::get('/expense',[RouteController::class,'ShowExpense'])->name('normal.expense');
+    
 });
 
 

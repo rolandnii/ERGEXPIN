@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Schema::create('income_types', function (Blueprint $table) {
+        // Schema::table('income_types', function (Blueprint $table) {
         //     $table->uuid('id')->primary()->index('incType');
         //     $table->string('label');
         //     $table->timestamps();
         //     $table->softDeletes();
+        //     $table->after('label', function (Blueprint $table) {
+        //         $table->string('icon')->nullable();
+        //     });
         // });
     }
 

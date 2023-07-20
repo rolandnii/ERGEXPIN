@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
+use Illuminate\Database\Eloquent\BroadcastsEvents;
 use Ramsey\Uuid\Uuid;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
@@ -15,7 +16,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasUuids, SoftDeletes;
+    use HasApiTokens, HasFactory, Notifiable, HasUuids, SoftDeletes, BroadcastsEvents;
 
     /**
      * The attributes that are mass assignable.
@@ -85,4 +86,8 @@ class User extends Authenticatable
     //          $builder->where('created_at', '<', now()->subYears(2000));
     //      });
     //  }
+    public function broadcastOn(string $event): array
+    {
+        return [$this, $this->user];
+    }
 }
