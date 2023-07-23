@@ -16,8 +16,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasUuids, SoftDeletes, BroadcastsEvents;
+    use HasApiTokens, HasFactory, Notifiable, HasUuids, SoftDeletes;
 
+    /**
+     * The trait BroadcastsEvents is used with you want to broadcast event on the model
+     */
     /**
      * The attributes that are mass assignable.
      *
@@ -86,8 +89,8 @@ class User extends Authenticatable
     //          $builder->where('created_at', '<', now()->subYears(2000));
     //      });
     //  }
-    public function broadcastOn(string $event): array
-    {
-        return [$this, $this->user];
-    }
+    // public function broadcastOn(string $event): array
+    // {
+    //     return [$this, $this->user];
+    // }
 }

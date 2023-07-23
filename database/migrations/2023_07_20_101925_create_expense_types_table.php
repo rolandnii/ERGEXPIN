@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Schema::table('expense_types', function (Blueprint $table) {
-        //     // $table->uuid('id')->primary()->index('expType');
-        //     // $table->string('label');
-        //     // $table->timestamps();
-        //     // $table->softDeletes();
-        //     // $table->after('label', function (Blueprint $table) {
-        //     //     $table->string('icon')->nullable();
-        //     // });
+        // Schema::create('expense_types', function (Blueprint $table) {
+        //     $table->id('id')->index('expType');
+        //     $table->string('label');
+        //     $table->string('icon')->nullable();
+        //     $table->timestamps();
+        //     $table->softDeletes();
+            
         // });
     }
 

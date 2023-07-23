@@ -31,10 +31,10 @@
                 <div class="mb-4">
                   <div class="form-check">
                     <label class="form-check-label text-muted">
-                      <input type="checkbox" name="agree" value="{{ old('agree') }}" class="form-check-input">
+                      <input type="checkbox" name="agree" value="1" class="form-check-input">
                       I agree to all Terms & Conditions
                     </label>
-            <x-input-error :messages="$errors->get('agree')" class="mt-2 text-danger" />
+            <x-input-error messages="Please agree to the terms to create an account" class="mt-2 text-danger" />
 
                   </div>
                 </div>

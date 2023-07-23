@@ -3,6 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\ExpenseType;
+use App\Models\IncomeType;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,5 +22,27 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        
+
+        IncomeType::upsert([
+            [
+                "label" => "Salary",
+                "icon" => "sale",
+            ],
+            [
+                "label" => "Freelance",
+                "icon" => "wallet-membership",
+            ],
+            [
+                "label" => "Gift",
+                "icon" => "gift",
+            ],
+            [
+                "label" => "Other",
+                "icon" => "zipbox",
+            ],
+
+        ],['label'],['icon']);
     }
 }

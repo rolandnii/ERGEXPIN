@@ -9,14 +9,14 @@
       <li class="nav-item {{ request()->routeIs('normal.expense') ? 'active' : ''}}">
         <a class="nav-link hover" href="{{ url('expense') }}" >
           <i class="icon-paper menu-icon"></i>
-          <span class="menu-title">Income</span>
+          <span class="menu-title">Expenses</span>
         </a>
       </li>
 
       <li class="nav-item {{ request()->routeIs('income') ? 'active' : ''}}">
         <a class="nav-link hover" href="{{ url('#') }}" >
           <i class="icon-contract menu-icon"></i>
-          <span class="menu-title">Expense</span>
+          <span class="menu-title">Incomes</span>
         </a>
       </li>
     

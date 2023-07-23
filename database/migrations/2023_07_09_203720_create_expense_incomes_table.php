@@ -13,11 +13,11 @@ return new class extends Migration
     {
         // Schema::create('expense_incomes', function (Blueprint $table) {
         //     $table->uuid('id')->primary();
-        //     $table->foreignUuid('inc_id')->nullable()->constrained(
+        //     $table->foreignId('inc_id')->nullable()->constrained(
         //         table: 'incomes',
         //         indexName: 'incId'
         //     )->onDelete('cascade');
-        //     $table->foreignUuid('exp_id')->nullable()->constrained(
+        //     $table->foreignId('exp_id')->nullable()->constrained(
         //         table: 'expenses',
         //         indexName: 'expId'
         //     )->cascadeOnDelete();

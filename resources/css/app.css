@@ -6,4 +6,11 @@
     .sidebar .nav .nav-item .nav-link.hover:hover{ 
         @apply transition-colors duration-300 ease-out
     }
+
+}
+
+@layer base {
+    * {
+        font-family: Nunito, sans-serif;
+    }
 }

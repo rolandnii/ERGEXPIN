@@ -12,11 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         // Schema::create('expenses', function (Blueprint $table) {
-        //     $table->uuid('id')->primary()->index('expId');
+        //     $table->id('id')->index('expId');
         //     $table->string('exp_title');
         //     $table->longText('exp_description')->nullable();
         //     $table->foreignUuid('user_id')->constrained('users', 'id');
-        //     $table->foreignUuid('exp_type')->constrained('expense_types', 'id');
+        //     $table->foreignId('exp_type')->constrained('expense_types', 'id');
         //     $table->timestamps();
         //     $table->softDeletes();
         // });
