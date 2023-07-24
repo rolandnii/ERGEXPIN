@@ -1,5 +1,8 @@
- {{-- Base boostrap js --}}
- {{-- <script src="{{ asset('lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script> --}}
+{{-- jquery --}}
+<script src="{{ asset('lib/jquery.min.js') }}"></script>
+
+{{-- Base boostrap js --}}
+ <script src="{{ asset('lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
  <!-- plugins:js -->
  <script src="{{ asset("vendors/js/vendor.bundle.base.js") }}"></script>
  <!-- endinject -->

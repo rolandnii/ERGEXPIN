@@ -7,5 +7,4 @@ new AirDatepicker('#date',{
     locale: localeEn,
     range: true,
     multipleDatesSeparator: " - ",
-    startDate: new Date(),
 });

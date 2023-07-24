@@ -11,15 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Schema::create('expenses', function (Blueprint $table) {
-        //     $table->id('id')->index('expId');
-        //     $table->string('exp_title');
-        //     $table->longText('exp_description')->nullable();
-        //     $table->foreignUuid('user_id')->constrained('users', 'id');
-        //     $table->foreignId('exp_type')->constrained('expense_types', 'id');
-        //     $table->timestamps();
-        //     $table->softDeletes();
-        // });
+        Schema::table('expenses', function (Blueprint $table) {
+            // $table->id('id')->index('expId');
+            // $table->string('exp_title');
+            // $table->longText('exp_description')->nullable();
+            // $table->foreignUuid('user_id')->constrained('users', 'id');
+            // $table->foreignId('exp_type')->constrained('expense_types', 'id');
+            // $table->timestamps();
+            // $table->softDeletes();
+            $table->after("exp_description",function (Blueprint $table){
+                $table->decimal("exp_amount",10,2);
+            });
+        });
     }
 
     /**

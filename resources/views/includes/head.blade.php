@@ -1,6 +1,9 @@
-{{-- Base boostrap--}}
-{{-- <link rel="stylesheet" href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}"> --}}
+{{-- Base boostrap --}}
+<link rel="stylesheet" href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}">
 
+<!-- Plugin css for this page -->
+<link rel="stylesheet" href="../../vendors/select2/select2.min.css">
+<link rel="stylesheet" href="../../vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
 <link rel="stylesheet" href="{{ asset('vendors/feather/feather.css') }}">
 <link rel="stylesheet" href="{{ asset('vendors/ti-icons/css/themify-icons.css') }}">
 <link rel="stylesheet" href="{{ asset('vendors/css/vendor.bundle.base.css') }}">
@@ -15,6 +18,5 @@
 <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
 <!-- End plugin css for this page -->
 <!-- inject:css -->
-<link rel="stylesheet" href="{{ asset('css/vertical-layout-light/style.css') }}">
 <!-- endinject -->
 <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" />

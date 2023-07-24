@@ -2,28 +2,30 @@
     <x-slot name="title">
         Expense
     </x-slot>
+
     <div class=" flex justify-between">
         <section class="">
             <div class="text-lg text-gray-700 mb-2">Expenses overview</div>
             <div>
                 <small class="text text-gray-500 ">total expense record</small>
-                <div class="text-primary text-2xl my-1">$2001,230</div>
-                <small class="text text-gray-500">last 30 days</small>
+                <div class="text-primary text-2xl my-1 mb-2">$2001,230</div>
+                <div class="">
+                    <form class="bg-white p-1 px-2 text-sm rounded flex items-center justify-center h-fit gap-1">
+                        <div><i class="mdi mdi-calendar text-primary text-base"></i></div>
+                        <input type="text"
+                            placeholder="{{ date('M d, Y') . ' - ' . date('M d, Y', strtotime('-30 days', strtotime(date('Y-m-d')))) }}"
+                            class="text-sm text-primary border-none outline-none cursor-pointer rounded  outline-offset-0 p-1 input"
+                            id="date" readonly>
+                    </form>
+                </div>
             </div>
+            
         </section>
 
         <section>
-            <div class="mb-4">
-                <form class="bg-white p-1 px-2 text-sm rounded flex items-center justify-center h-fit gap-1">
-                    <div><i class="mdi mdi-calendar text-primary text-base"></i></div>
-                    <input type="text"
-                        placeholder="{{ date('M d, Y') . ' - ' . date('M d, Y', strtotime('-30 days', strtotime(date('Y-m-d')))) }}"
-                        class="text-sm text-primary border-none outline-none cursor-pointer rounded  outline-offset-0 p-1 input"
-                        id="date" readonly>
-                </form>
-            </div>
+
             <div>
-                <button class="btn btn-primary rounded ">Record expenses</button>
+                <button class="btn btn-primary rounded flex items-center gap-1" data-bs-toggle="modal" data-bs-target="#addModal"><i class="mdi mdi-plus-circle-outline"></i> Add new expenses</button>
             </div>
         </section>
     </div>
@@ -116,22 +118,31 @@
                     <h3 class="text-lg text-gray-700 font-semibold mb-3">Expenses History</h3>
                     <table class="w-full table-auto border-spacing-1 border-separate">
                         <thead>
-                            <th class="bg-red-100 p-2 rounded-sm text-red-600"></th>
-                            <th class="bg-red-100 p-2 rounded-sm text-red-600"></th>
-                            <th class="bg-red-100 p-2 rounded-sm text-red-600"></th>
-                            <th class="bg-red-100 p-2 rounded-sm text-red-600"></th>
+                            <th class="bg-red-50 p-2 rounded-sm text-gray-700">Title</th>
+                            <th class="bg-red-100 p-2 rounded-sm text-gray-700">Amount</th>
+                            <th class="bg-red-100 p-2 rounded-sm text-gray-700">Date</th>
+                            <th class="bg-red-100 p-2 rounded-sm text-gray-700">Action</th>
 
-                          
                         </thead>
                         <tbody>
                             <tr>
+                                <td class="bg-gray-100 p-2 rounded-sm text-blue-600">nnnnnnnnnnn nnnnn nn  nn  n</td>
                                 <td class="bg-blue-100 p-2 rounded-sm text-blue-600"></td>
                                 <td class="bg-blue-100 p-2 rounded-sm text-blue-600"></td>
-                                <td class="bg-blue-100 p-2 rounded-sm text-blue-600"></td>
-                                <td class="bg-blue-100 p-2 rounded-sm text-blue-600"></td>
-                        
+                                <td class="bg-blue-100 p-2 rounded-sm  text-blue-600">
+                                    <button class="btn btn-sm btn-primary rounded-sm border-none"><i
+                                            class="mdi mdi-import"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-danger rounded-sm border-none bg-red-600"><i
+                                            class="mdi mdi-delete"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-info rounded-sm border-none bg-blue-600"><i
+                                            class="mdi mdi-pencil-box-outline"></i>
+                                    </button>
+                                </td>
+
                             </tr>
-                           
+
 
                         </tbody>
                     </table>
@@ -139,7 +150,8 @@
             </div>
         </div>
     </div>
-
+    
+@include("modules.normal.expense.modals.add")
     @push('scripts')
         @vite('resources/js/expenses.js')
     @endpush

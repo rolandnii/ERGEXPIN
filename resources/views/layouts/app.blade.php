@@ -16,7 +16,10 @@
     @include('includes.head')
 
     <!-- Scripts -->
+    <link rel="stylesheet" href="{{ asset('css/vertical-layout-light/style.css') }}">
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 
 <body class="font-sans antialiased">
