@@ -19,4 +19,9 @@ class RouteController extends Controller
     {
         return view("modules.normal.expense.index");
     }
+
+    public function ShowAddExpense()
+    {
+        return view("modules.normal.expense.expense_add");
+    }
 }

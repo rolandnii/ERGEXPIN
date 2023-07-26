@@ -62,7 +62,6 @@
                 <div class="text-end">
                     <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                     <button class="btn btn-primary bg-primary" form="" type="submit">Save</button>
-
                 </div>
             </form>
 

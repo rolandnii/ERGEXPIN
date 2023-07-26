@@ -25,7 +25,10 @@
         <section>
 
             <div>
-                <button class="btn btn-primary rounded flex items-center gap-1" data-bs-toggle="modal" data-bs-target="#addModal"><i class="mdi mdi-plus-circle-outline"></i> Add new expenses</button>
+                <a href="{{ url('add/expense') }}" class="h hover:no-underline">
+                <button class="btn btn-primary rounded flex items-center gap-1" ><i class="mdi mdi-plus-circle-outline"></i> Add new expenses</button>
+
+                </a>
             </div>
         </section>
     </div>
@@ -151,7 +154,6 @@
         </div>
     </div>
     
-@include("modules.normal.expense.modals.add")
     @push('scripts')
         @vite('resources/js/expenses.js')
     @endpush
