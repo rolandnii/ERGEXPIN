@@ -48,11 +48,16 @@ class RouteController extends Controller
         ->where("expenses.user_id",auth()->user()->id)
         ->orderBy("amount","desc")
         ->groupBy("expense_types.label")
+        ->where("expenses.deleted_at")
         ->limit(4)
         ->get()
         ;
-        
-        return view("modules.normal.expense.index" ,compact('latestExpenses',"stats","totalamount"));
+    $expenses = $query
+    ->where("expenses.user_id",auth()->user()->id)
+    ->orderBy("created_at","desc")
+
+    ->paginate(6);
+        return view("modules.normal.expense.index" ,compact('latestExpenses',"stats","totalamount",'expenses'));
     }
 
     public function ShowAddExpense()

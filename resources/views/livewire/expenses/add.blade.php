@@ -1,7 +1,7 @@
 <div class="card max-w-4xl">
-
-
+   
     <div class="p-4 mt-0 border-none text-gray-800 card-body">
+        
         {{-- <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button> --}}
         <div class="flex justify-between items-center mb-3">
             <h3 class="text-xl">Add new expenses</h3>

@@ -31,6 +31,10 @@ class Add extends Component
 
     ];
 
+    public function back(){
+        return redirect('expense');
+    }
+
     public function save()
     {
        
