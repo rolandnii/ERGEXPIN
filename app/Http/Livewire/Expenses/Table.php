@@ -19,6 +19,10 @@ class Table extends Component
     $this->resetPage();
    }
 
+   public function updatingSearch()
+   {
+    $this->resetPage();
+   }
     public function render()
     {
         $expenses = Expense::join("expense_types", "expenses.exp_type", "expense_types.id")
@@ -30,8 +34,10 @@ class Table extends Component
         ->when( $this->category ,function ($query){
             return $query->where("expense_types.label", $this->category);
         })
-        ->when( $this->category ,function ($query){
-            return $query->where("expense_types.label", $this->category);
+        ->when( $this->search ,function ($query){
+            return $query->where("expenses.exp_title", "like","%".$this->search ."%")
+            ->orWhere("expenses.exp_amount","like","%".$this->search ."%");
+            ;
         })
         ->where("expenses.user_id",auth()->user()->id)
         ->orderBy("created_at","desc")

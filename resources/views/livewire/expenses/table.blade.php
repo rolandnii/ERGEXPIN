@@ -19,6 +19,7 @@
                         </div>
                         <div>
                             <input type="text"
+                            wire:model="search"
                             placeholder="Search"
                                 class="bg-gray-100 border border-gray-300 text-gray-600 w-52 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
                                 id="title">
