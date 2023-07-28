@@ -14,6 +14,11 @@ class Table extends Component
    public $search;
    public $category;
 
+   public function updatedCategory()
+   {
+    $this->resetPage();
+   }
+
     public function render()
     {
         $expenses = Expense::join("expense_types", "expenses.exp_type", "expense_types.id")
@@ -22,6 +27,12 @@ class Table extends Component
             "expense_types.label",
             "expense_types.icon",
         )
+        ->when( $this->category ,function ($query){
+            return $query->where("expense_types.label", $this->category);
+        })
+        ->when( $this->category ,function ($query){
+            return $query->where("expense_types.label", $this->category);
+        })
         ->where("expenses.user_id",auth()->user()->id)
         ->orderBy("created_at","desc")
         ->paginate(6);

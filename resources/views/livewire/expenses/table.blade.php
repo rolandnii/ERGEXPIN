@@ -7,6 +7,7 @@
                     <div class="w-full flex items-center justify-between mb-3" >
                         <div>
                             <select name="" 
+                            wire:model="category"
                             class="bg-gray-100 border border-gray-300  text-gray-600 w-52 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
                             id="">
                             <option value="">Filter by Category</option>
@@ -55,7 +56,7 @@
 
                                 </tr>
                             @empty
-                                <td class="bg-gray-100 p-2 rounded-sm text-gray-600" colspan="4">No expenses
+                                <td class="bg-gray-100 p-2 rounded-sm text-gray-600 text-center" colspan="5">No expenses
                                     available</td>
                             @endforelse
 
