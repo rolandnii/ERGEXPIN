@@ -6,7 +6,7 @@
           <span class="menu-title">Dashboard</span>
         </a>
       </li>
-      <li class="nav-item {{ request()->routeIs('normal.expense') ? 'active' : ''}}">
+      <li class="nav-item {{ request()->routeIs('normal.expense') || request()->routeIs('update.expense') ? 'active' : ''}}">
         <a class="nav-link hover" href="{{ url('expense') }}" >
           <i class="icon-paper menu-icon"></i>
           <span class="menu-title">Expenses</span>

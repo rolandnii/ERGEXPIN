@@ -66,6 +66,7 @@ class RouteController extends Controller
 
     public function ShowViewExpense(Expense $user)
     {
+        //pending
         return view("modules.normal.expense.expense_view", [
             'user' => $user
         ]);
@@ -73,7 +74,7 @@ class RouteController extends Controller
 
     public function ShowDeleteExpense(Expense $user)
     {
-        //pending
+        //done
         return view("modules.normal.expense.expense_delete", [
             'user' => $user
         ]);

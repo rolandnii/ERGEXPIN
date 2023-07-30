@@ -13,4 +13,9 @@ class ExpenseType extends Model
         'updated_at',
         'deleted_at',
     ];
+
+    public function expenses()
+    {
+        return $this->hasMany(Expense::class,'exp_type');
+    }
 }

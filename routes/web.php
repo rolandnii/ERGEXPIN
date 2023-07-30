@@ -18,13 +18,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth','verified'])->group( function () {
     Route::get('/',[RouteController::class,'ShowDashboard'])->name("dashboard");
-    Route::get('/dashboard',[RouteController::class,'ShowDashboard'])->name('dashboard');
+    Route::get('/dashboard',[RouteController::class,'ShowDashboard'])->name('dashboard.2');
     Route::get('/expense',[RouteController::class,'ShowExpense'])->name('normal.expense');
     // Expense routes
     Route::get('add/expense/',[RouteController::class,'ShowAddExpense'])->name("add.expense");
-    Route::get('view/expense/{user}',[RouteController::class,'ShowViewExpense'])->name("normal.expense");
-    Route::get('delete/expense/{user}',[RouteController::class,'ShowDeleteExpense'])->name("normal.expense");
-    Route::get('update/expense/{user}',[RouteController::class,'ShowUpdateExpense'])->name("normal.expense");
+    Route::get('view/expense/{user}',[RouteController::class,'ShowViewExpense'])->name("view.expense");
+    Route::get('delete/expense/{user}',[RouteController::class,'ShowDeleteExpense'])->name("delete.expense");
+    Route::get('update/expense/{user}',[RouteController::class,'ShowUpdateExpense'])->name("update.expense");
     // Income routes
     // Route::get('add/income/',[RouteController::class,'ShowIncomeForm'])->name("add.income");
     // Route::get('view/income/',[RouteController::class,'ShowIncomeForm'])->name("view.income");
