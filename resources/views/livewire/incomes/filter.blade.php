@@ -1,8 +1,8 @@
 <div>
     <section class="">
-        <div class="text-lg text-gray-700 mb-2">Expenses overview</div>
+        <div class="text-lg text-gray-700 mb-2">Incomes overview</div>
         <div>
-            <small class="text text-gray-500 ">total expense record</small>
+            <small class="text text-gray-500 ">total incomes record</small>
             <div class="text-primary text-2xl my-1 mb-2">₵{{ $amount }}</div>
             <div class="">
                 <form class="bg-white p-1 px-2 text-sm rounded flex items-center justify-center h-fit gap-1">
@@ -26,6 +26,7 @@
                     </select>
                 
                 </form>
+                
             </div>
         </div>
         

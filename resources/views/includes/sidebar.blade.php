@@ -13,8 +13,8 @@
         </a>
       </li>
 
-      <li class="nav-item {{ request()->routeIs('income') ? 'active' : ''}}">
-        <a class="nav-link hover" href="{{ url('#') }}" >
+      <li class="nav-item {{ request()->routeIs('normal.income') ? 'active' : ''}}">
+        <a class="nav-link hover" href="{{ url('income') }}" >
           <i class="icon-contract menu-icon"></i>
           <span class="menu-title">Incomes</span>
         </a>
