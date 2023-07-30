@@ -21,7 +21,7 @@ class RouteController extends Controller
     public function ShowExpense()
     {
 
-        
+
 
 
         $query = Expense::query();
@@ -31,33 +31,32 @@ class RouteController extends Controller
                 "expense_types.label",
                 "expense_types.icon",
             )
-            ->where("expenses.user_id",auth()->user()->id)
-            ->orderBy("expenses.created_at","desc")
+            ->where("expenses.user_id", auth()->user()->id)
+            ->orderBy("expenses.created_at", "desc")
             ->limit(4)
             ->get();
 
-        $totalamount = $query->where("expenses.user_id",auth()->user()->id)
-        ->sum("exp_amount");
+        $totalamount = $query->where("expenses.user_id", auth()->user()->id)
+            ->sum("exp_amount");
         $stats = DB::table("expenses")->join("expense_types", "expenses.exp_type", "expense_types.id")
-        ->select(
-            DB::raw("SUM(expenses.exp_amount) as  amount" ),
-            "expense_types.label",
-            // "expense_types.icon",
+            ->select(
+                DB::raw("SUM(expenses.exp_amount) as  amount"),
+                "expense_types.label",
+                // "expense_types.icon",
 
-        )
-        ->where("expenses.user_id",auth()->user()->id)
-        ->orderBy("amount","desc")
-        ->groupBy("expense_types.label")
-        ->where("expenses.deleted_at")
-        ->limit(4)
-        ->get()
-        ;
-    $expenses = $query
-    ->where("expenses.user_id",auth()->user()->id)
-    ->orderBy("created_at","desc")
+            )
+            ->where("expenses.user_id", auth()->user()->id)
+            ->orderBy("amount", "desc")
+            ->groupBy("expense_types.label")
+            ->where("expenses.deleted_at")
+            ->limit(4)
+            ->get();
+        $expenses = $query
+            ->where("expenses.user_id", auth()->user()->id)
+            ->orderBy("created_at", "desc")
 
-    ->paginate(6);
-        return view("modules.normal.expense.index" ,compact('latestExpenses',"stats","totalamount",'expenses'));
+            ->paginate(6);
+        return view("modules.normal.expense.index", compact('latestExpenses', "stats", "totalamount", 'expenses'));
     }
 
     public function ShowAddExpense()
@@ -67,21 +66,24 @@ class RouteController extends Controller
 
     public function ShowViewExpense(Expense $user)
     {
-        return view("modules.normal.expense.expense_view");
-    }
-
-    public function ShowDeleteExpense(Expense $user)
-    {
-        return view("modules.normal.expense.expense_delete");
-    }
-
-    public function ShowUpdateExpense(Expense $user)
-    {
-
-        return view("modules.normal.expense.expense_update", [
+        return view("modules.normal.expense.expense_view", [
             'user' => $user
         ]);
     }
 
-    
+    public function ShowDeleteExpense(Expense $user)
+    {
+        //pending
+        return view("modules.normal.expense.expense_delete", [
+            'user' => $user
+        ]);
+    }
+
+    public function ShowUpdateExpense(Expense $user)
+    {
+//done
+        return view("modules.normal.expense.expense_update", [
+            'user' => $user
+        ]);
+    }
 }

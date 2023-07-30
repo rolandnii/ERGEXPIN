@@ -71,7 +71,6 @@
 
         </form>
         <div class="text-end space-x-2">
-            <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
             <button class="btn btn-primary bg-primary" form="expense-form" type="submit">Save</button>
         </div>
     </div>
