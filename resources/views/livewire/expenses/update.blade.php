@@ -4,23 +4,23 @@
         
         {{-- <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button> --}}
         <div class="flex justify-between items-center mb-3">
-            <h3 class="text-xl">Add new expenses</h3>
+            <h3 class="text-xl ">Update  expenses <span class="text-primary">#{{ $user->id }}</span> </h3>
             {{-- <button class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal"><i
                     class="mdi mdi-close"></i></button> --}}
         </div>
         @if (session()->has('message'))
-            <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:text-green-400" role="alert"
+            <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:text-green-400"  role="alert"
                 id="alert-con">
-                <span class="font-medium">Expenses added!</span> A new expenses with an amount of
-                {{ session('message') }}
+                <span class="font-medium">Expenses updated!</span>  new  changes successfully saved
             </div>
         @endif
         {{-- <hr class="border-[1px] border-gray-700 mb-3"> --}}
         <form id="expense-form" wire:submit.prevent="save">
             <div class="row gap-0 mb-3">
                 <div class="col-12 col-md-8 pr-0">
+                     
                     <label class="block mb-1 text-base font-medium text-gray-700" for="title">Title</label>
-                    <input wire:model.defer="title" type="text"
+                    <input wire:model.defer="title" type="text" value="{{ $user['exp_title']}}"
                         class="bg-gray-100 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                         id="title">
                     @error('title')
@@ -71,7 +71,6 @@
 
         </form>
         <div class="text-end space-x-2">
-            <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
             <button class="btn btn-primary bg-primary" form="expense-form" type="submit">Save</button>
         </div>
     </div>

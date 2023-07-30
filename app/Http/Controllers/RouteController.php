@@ -64,4 +64,24 @@ class RouteController extends Controller
     {
         return view("modules.normal.expense.expense_add");
     }
+
+    public function ShowViewExpense(Expense $user)
+    {
+        return view("modules.normal.expense.expense_view");
+    }
+
+    public function ShowDeleteExpense(Expense $user)
+    {
+        return view("modules.normal.expense.expense_delete");
+    }
+
+    public function ShowUpdateExpense(Expense $user)
+    {
+
+        return view("modules.normal.expense.expense_update", [
+            'user' => $user
+        ]);
+    }
+
+    
 }

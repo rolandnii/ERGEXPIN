@@ -44,17 +44,18 @@
                                     <td class="bg-gray-100 p-2 rounded-sm text-gray-600">
                                         {{ date('F jS, Y', strtotime($expense->created_at)) }}</td>
                                     <td class="bg-gray-100 p-2 rounded-sm text-center">
-                                        <button class="btn btn-sm btn-primary rounded-sm border-none"><i
+                                        <a href="{{ url("update/expense/$expense->id") }}"  class="hover:no-underline">
+                                            <button class="btn btn-sm btn-primary rounded-sm border-none" title="edit"><i
                                                 class="mdi mdi-import"></i>
                                         </button>
-                                        <button class="btn btn-sm btn-danger rounded-sm border-none bg-red-600"><i
+                                        </a>
+                                        <button class="btn btn-sm btn-danger rounded-sm border-none bg-red-600" title="delete"><i
                                                 class="mdi mdi-delete"></i>
                                         </button>
-                                        <button class="btn btn-sm btn-info rounded-sm border-none bg-blue-600"><i
-                                                class="mdi mdi-pencil-box-outline"></i>
+                                        <button class="btn btn-sm btn-info rounded-sm border-none bg-blue-600" title="view details"><i
+                                                class="mdi mdi-ticket-account"></i>
                                         </button>
                                     </td>
-
                                 </tr>
                             @empty
                                 <td class="bg-gray-100 p-2 rounded-sm text-gray-600 text-center" colspan="5">No expenses
