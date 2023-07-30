@@ -71,7 +71,12 @@
 
         </form>
         <div class="text-end space-x-2">
-            <button class="btn btn-primary bg-primary" form="expense-form" type="submit">Save</button>
+            <div wire:loading>
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden"></span>
+                </div>
+            </div>
+            <button class="btn btn-primary bg-primary" form="expense-form" wire:loading.remove type="submit">Save</button>
         </div>
     </div>
 

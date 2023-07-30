@@ -32,27 +32,27 @@
 
                         </thead>
                         <tbody>
-                            @forelse ($incomes as $expense)
+                            @forelse ($incomes as $income)
                                 <tr>
-                                    <td class="bg-gray-100 p-2 rounded-sm text-gray-600">{{ $expense->exp_title }}</td>
-                                    <td class="bg-gray-100 p-2 rounded-sm text-gray-600">₵{{ $expense->exp_amount }}
+                                    <td class="bg-gray-100 p-2 rounded-sm text-gray-600">{{ $income->inc_title }}</td>
+                                    <td class="bg-gray-100 p-2 rounded-sm text-gray-600">₵{{ $income->inc_amount }}
                                     </td>
-                                    <td class="bg-gray-100 p-2 rounded-sm text-gray-600">{{ $expense->label }}</td>
+                                    <td class="bg-gray-100 p-2 rounded-sm text-gray-600">{{ $income->label }}</td>
                                     <td class="bg-gray-100 p-2 rounded-sm text-gray-600">
-                                        {{ date('F jS, Y', strtotime($expense->created_at)) }}</td>
+                                        {{ date('F jS, Y', strtotime($income->created_at)) }}</td>
                                     <td class="bg-gray-100 p-2 rounded-sm text-center">
-                                        <a href="{{ url("update/expense/$expense->id") }}" class="hover:no-underline">
+                                        <a href="{{ url("update/income/$income->id") }}" class="hover:no-underline">
                                             <button class="btn btn-sm btn-primary rounded-sm border-none"
                                                 title="edit"><i class="mdi mdi-import"></i>
                                             </button>
                                         </a>
-                                        <a href="{{ url("delete/expense/$expense->id") }}" class="hover:no-underline">
+                                        <a href="{{ url("delete/income/$income->id") }}" class="hover:no-underline">
 
                                             <button class="btn btn-sm btn-danger rounded-sm border-none bg-red-600"
                                                 title="delete"><i class="mdi mdi-delete"></i>
                                             </button>
                                         </a>
-                                        <a href="{{ url("view/expense/$expense->id") }}" class="hover:no-underline">
+                                        <a href="{{ url("view/income/$income->id") }}" class="hover:no-underline">
 
                                             <button class="btn btn-sm btn-info rounded-sm border-none bg-blue-600"
                                                 title="view details"><i class="mdi mdi-ticket-account"></i>
@@ -62,7 +62,7 @@
                                 </tr>
                             @empty
                                 <td class="bg-gray-100 p-2 rounded-sm text-gray-600 text-center" colspan="5">No
-                                    expenses
+                                    incomes
                                     available</td>
                             @endforelse
 

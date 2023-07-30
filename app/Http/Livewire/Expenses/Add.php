@@ -39,8 +39,6 @@ class Add extends Component
     {
        
         $validated =  $this->validate();
-    
-
         $expense = Expense::create([
             "exp_title" =>$validated["title"],
             "exp_description" => $validated['description'],

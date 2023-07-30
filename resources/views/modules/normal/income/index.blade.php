@@ -80,11 +80,11 @@
                                 <div class="bg-warning pt-1 flex items-center justify-center h-10 rounded-full w-10"><i
                                         class="mdi mdi-{{ $income->icon }} text-gray-50"></i></div>
                                 <div>
-                                    <div>{{ $income->exp_title }}</div>
+                                    <div>{{ $income->inc_title }}</div>
                                     <div class="text-sm text-gray-400">{{ $income->label }}</div>
                                 </div>
                             </div>
-                            <span class="text-danger">₵{{ $income->exp_amount }}</span>
+                            <span class="text-success">₵{{ $income->inc_amount }}</span>
                         </div>
                     </div>
                 

@@ -109,7 +109,6 @@ class RouteController extends Controller
             ->select(
                 DB::raw("SUM(incomes.inc_amount) as  amount"),
                 "income_types.label",
-                // "income_types.icon",
 
             )
             ->where("incomes.user_id", auth()->user()->id)
@@ -124,5 +123,35 @@ class RouteController extends Controller
 
             ->paginate(6);
         return view("modules.normal.income.index", compact('latestIncomes', "stats", "totalamount", 'incomes'));
+    }
+
+
+    public function ShowAddIncome()
+    {
+        return view("modules.normal.income.income_add");
+    }
+
+    public function ShowViewIncome(Income $user)
+    {
+        //pending
+        return view("modules.normal.income.income_view", [
+            'user' => $user
+        ]);
+    }
+
+    public function ShowDeleteIncome(Income $user)
+    {
+        //done
+        return view("modules.normal.income.income_delete", [
+            'user' => $user
+        ]);
+    }
+
+    public function ShowUpdateIncome(Income $user)
+    {
+//done
+        return view("modules.normal.income.income_update", [
+            'user' => $user
+        ]);
     }
 }

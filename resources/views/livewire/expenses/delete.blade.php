@@ -25,7 +25,7 @@
                     type="submit">Delete</button>
             @endif
             <div wire:loading>
-                <div class="spinner-border text-danger" role="status">
+                <div class="spinner-border text-primary" role="status">
                     <span class="visually-hidden"></span>
                 </div>
             </div>
