@@ -14,7 +14,7 @@
 
             <div class="mb-3">
                 <div class="mb-1">Title</div>
-                <div class="w-full px-3 py-1 bg-gray-100 text-gray-700 rounded">
+                <div class="w-full p-3 bg-gray-100 text-gray-700 rounded">
                     {{ $user->exp_title }}
                 </div>
             </div>
@@ -22,7 +22,7 @@
 
             <div class="mb-3">
                 <div class="mb-1">Amount</div>
-                <div class="w-53 px-3 py-1 bg-gray-100 text-gray-700 rounded">
+                <div class="w-53 p-3 bg-gray-100 text-gray-700 rounded">
                     ₵ {{ $user->exp_amount }}
 
                 </div>
@@ -31,7 +31,7 @@
 
             <div class="mb-3">
                 <div class="mb-1">Category</div>
-                <div class="w-full px-3 py-1 bg-gray-100 text-gray-700 rounded">
+                <div class="w-full p-3 bg-gray-100 text-gray-700 rounded">
                     {{ $user->category->label }}
 
                 </div>
@@ -39,7 +39,7 @@
 
             <div  class="mb-3">
                 <div class="mb-1">Descrption</div>
-                <div class="w-full px-3 py-1 bg-gray-100 text-gray-700 rounded">
+                <div class="w-full p-3 bg-gray-100 text-gray-700 rounded">
                     {{ $user->exp_description }}
 
                 </div>
@@ -47,7 +47,7 @@
 
             <div  class="mb-3">
                 <div class="mb-1">Date created</div>
-                <div class="w-full px-3 py-1 bg-gray-100 text-gray-700">
+                <div class="w-full p-3 bg-gray-100 text-gray-700">
                     {{ date("F jS, Y",strtotime($user->created_at)) }}
 
                 </div>

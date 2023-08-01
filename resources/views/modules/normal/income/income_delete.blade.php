@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="title">
-        Income
+       Delete Income
     </x-slot>
     <div class="row">
         <a href="{{ url('income') }}" class="hover:no-underline mb-3 col-1">
