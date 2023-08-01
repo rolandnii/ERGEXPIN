@@ -1,7 +1,7 @@
 <div>
     <div class="row">
         <div class="col-12">
-            <div class="card">
+            <div class="card" >
                 <div class="card-body">
                     <h3 class="text-lg text-gray-700 font-semibold mb-3">Incomes History</h3>
                     <div class="w-full flex items-center justify-between mb-3">

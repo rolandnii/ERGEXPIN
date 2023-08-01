@@ -3,14 +3,14 @@
         Income
     </x-slot>
 
-    <div class=" flex justify-between">
+    <div class=" flex justify-between" >
         @livewire('incomes.filter')
 
         <section>
 
-            <div>
+            <div data-aos="flip-up">
                 <a href="{{ url('add/income') }}" class="h hover:no-underline">
-                <button class="btn btn-primary rounded flex items-center gap-1" ><i class="mdi mdi-plus-circle-outline"></i> Add new income</button>
+                <button class="btn btn-primary rounded flex items-center gap-1"><i class="mdi mdi-plus-circle-outline"></i> Add new income</button>
 
                 </a>
             </div>
@@ -20,7 +20,7 @@
     <div class="row row-cols-1 row-cols-md-2 my-10">
         <section class="col">
 
-            <div class="card">
+            <div class="card" data-aos="flip-up">
                 <div class="card-body">
                     <h3 class="text-lg text-gray-700 font-semibold mb-2"> Incomes Statistics</h3>
 
@@ -70,7 +70,7 @@
             </div>
         </section>
         <section class="col">
-            <div class="card">
+            <div class="card" data-aos="flip-up">
                 <div class="card-body text-gray-700">
                     <h3 class="text-lg text-gray-700 font-semibold mb-3">Latest Incomes</h3>
                     @foreach ($latestIncomes as $income)
@@ -84,7 +84,10 @@
                                     <div class="text-sm text-gray-400">{{ $income->label }}</div>
                                 </div>
                             </div>
-                            <span class="text-success">₵{{ $income->inc_amount }}</span>
+                            <div class="flex items-center flex-col justify-start">
+                                <span class="text-danger">₵{{ $income->inc_amount }}</span>
+                                <div class="text-gray-700">{{ date('j M',strtotime($income->created_at)) }}</div>
+                            </div>
                         </div>
                     </div>
                 

@@ -24,7 +24,7 @@
         <li class="nav-item">
           <a class="nav-link hover" href="{{ url('income') }}">
               <i class="icon-contract menu-icon"></i>
-              <span class="menu-title">{{ _("Expense") }}</span>
+              <span class="menu-title">{{ _("Income") }}</span>
           </a>
       </li>
         @else

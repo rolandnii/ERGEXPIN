@@ -23,7 +23,7 @@ class Filter extends Component
 
     public function updatedDate($newUpdate)
     {
-            
+        sleep(1);
         switch ($newUpdate) {
             case 'today':
                 $this->amount = Income::where("user_id", auth()->user()->id)

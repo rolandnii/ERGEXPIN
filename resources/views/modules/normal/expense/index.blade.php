@@ -8,7 +8,7 @@
 
         <section>
 
-            <div>
+            <div data-aos="flip-up">
                 <a href="{{ url('add/expense') }}" class="h hover:no-underline">
                 <button class="btn btn-primary rounded flex items-center gap-1" ><i class="mdi mdi-plus-circle-outline"></i> Add new expenses</button>
 
@@ -20,7 +20,7 @@
     <div class="row row-cols-1 row-cols-md-2 my-10">
         <section class="col">
 
-            <div class="card">
+            <div class="card" data-aos="flip-up">
                 <div class="card-body">
                     <h3 class="text-lg text-gray-700 font-semibold mb-2"> Expenses Statistics</h3>
 
@@ -70,7 +70,7 @@
             </div>
         </section>
         <section class="col">
-            <div class="card">
+            <div class="card" data-aos="flip-up">
                 <div class="card-body text-gray-700">
                     <h3 class="text-lg text-gray-700 font-semibold mb-3">Latest Expenses</h3>
                     @foreach ($latestExpenses as $expense)
@@ -84,7 +84,10 @@
                                     <div class="text-sm text-gray-400">{{ $expense->label }}</div>
                                 </div>
                             </div>
-                            <span class="text-danger">₵{{ $expense->exp_amount }}</span>
+                            <div class="flex items-center flex-col justify-start">
+                                <span class="text-danger">₵{{ $expense->exp_amount }}</span>
+                                <div class="text-gray-700">{{ date('j M',strtotime($expense->created_at)) }}</div>
+                            </div>
                         </div>
                     </div>
                 

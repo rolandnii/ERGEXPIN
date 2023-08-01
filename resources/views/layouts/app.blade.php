@@ -37,6 +37,9 @@
     @include('includes.script')
     @livewireScripts()
     @stack('scripts')
+    <script>
+        AOS.init();
+      </script>
 </body>
 
 </html>

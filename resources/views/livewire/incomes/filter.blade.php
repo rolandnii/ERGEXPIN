@@ -2,8 +2,16 @@
     <section class="">
         <div class="text-lg text-gray-700 mb-2">Incomes overview</div>
         <div>
-            <small class="text text-gray-500 ">total incomes record</small>
-            <div class="text-primary text-2xl my-1 mb-2">₵{{ $amount }}</div>
+            <div class="text-sm text-gray-500 ">total incomes record</div>
+            <div class="text-primary text-2xl my-1 mb-2" wire:loading.remove>₵{{ $amount }}</div>
+            <div wire:loading class="my-2 px-3">
+                <div class="spinner-border text-primary text-sm" role="status">
+                    <span class="visually-hidden"></span>
+                </div>
+                {{-- <p class="placeholder-glow">
+                    <span class="placeholder col-12 bg-primary"></span>
+                  </p> --}}
+            </div>
             <div class="">
                 <form class="bg-white p-1 px-2 text-sm rounded flex items-center justify-center h-fit gap-1">
                     <div><i class="mdi mdi-calendar text-primary text-base"></i></div>
