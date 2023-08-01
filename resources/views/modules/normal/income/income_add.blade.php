@@ -12,6 +12,5 @@
     @livewire('incomes.add')
 
     @push('scripts')
-        @vite('resources/js/add_expenses.js')
     @endpush
 </x-app-layout>

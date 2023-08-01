@@ -7,6 +7,7 @@ use App\Models\Income;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Query\Builder;
+use Illuminate\Support\Facades\Redirect;
 
 class RouteController extends Controller
 {
@@ -17,6 +18,11 @@ class RouteController extends Controller
     public function ShowDashboard()
     {
         return view('dashboard');
+    }
+
+    public function RedirectDashboard()
+    {
+        return redirect('dashboard');
     }
 
     public function ShowExpense()
@@ -149,7 +155,6 @@ class RouteController extends Controller
 
     public function ShowUpdateIncome(Income $user)
     {
-
         return view("modules.normal.income.income_update", [
             'user' => $user
         ]);

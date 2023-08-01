@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}">
 
 {{-- Toast notification --}}
-<link rel="stylesheet" href="{{ asset('lib/iziToast-master/dist/css/iziToast.min.css') }}">
+{{-- <link rel="stylesheet" href="{{ asset('lib/iziToast-master/dist/css/iziToast.min.css') }}"> --}}
 
 <!-- Plugin css for this page -->
 <link rel="stylesheet" href="../../vendors/select2/select2.min.css">

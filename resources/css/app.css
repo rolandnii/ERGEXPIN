@@ -7,6 +7,12 @@
         @apply transition-colors duration-300 ease-out
     }
 
+    .sidebar .nav .nav-item.nothing.active > .nav-link.hover{ 
+        color: red !important;
+        background: rgb(31, 31, 31)
+        ;
+    }
+  
 }
 
 @layer base {

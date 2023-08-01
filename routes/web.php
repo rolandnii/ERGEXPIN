@@ -17,21 +17,22 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::middleware(['auth','verified'])->group( function () {
-    Route::get('/',[RouteController::class,'ShowDashboard'])->name("dashboard");
-    Route::get('/dashboard',[RouteController::class,'ShowDashboard'])->name('dashboard.2');
-    Route::get('/expense',[RouteController::class,'ShowExpense'])->name('normal.expense');
-    Route::get('income',[RouteController::class,'ShowIncome'])->name('normal.income');
+    // Route::get('/',[RouteController::class,'RedirectDashboard']);
+    Route::redirect('/','/dashboard');
+    Route::get('/dashboard',[RouteController::class,'ShowDashboard'])->name('dashboard.main');
+    Route::get('/expense',[RouteController::class,'ShowExpense'])->name('expense.main');
+    Route::get('income',[RouteController::class,'ShowIncome'])->name('income.main');
 
     // Expense routes
-    Route::get('add/expense/',[RouteController::class,'ShowAddExpense'])->name("add.expense");
-    Route::get('view/expense/{user}',[RouteController::class,'ShowViewExpense'])->name("view.expense");
-    Route::get('delete/expense/{user}',[RouteController::class,'ShowDeleteExpense'])->name("delete.expense");
-    Route::get('update/expense/{user}',[RouteController::class,'ShowUpdateExpense'])->name("update.expense");
+    Route::get('add/expense/',[RouteController::class,'ShowAddExpense'])->name('expense.add');
+    Route::get('view/expense/{user}',[RouteController::class,'ShowViewExpense'])->name('expense.view');
+    Route::get('delete/expense/{user}',[RouteController::class,'ShowDeleteExpense'])->name('expense.delete');
+    Route::get('update/expense/{user}',[RouteController::class,'ShowUpdateExpense'])->name('expense.update');
    // Income routes
-    Route::get('add/income/',[RouteController::class,'ShowAddIncome'])->name("add.income");
-    Route::get('view/income/{user}',[RouteController::class,'ShowViewIncome'])->name("view.income");
-    Route::get('delete/income/{user}',[RouteController::class,'ShowDeleteIncome'])->name("delete.income");
-    Route::get('update/income/{user}',[RouteController::class,'ShowUpdateIncome'])->name("update.income");
+    Route::get('add/income/',[RouteController::class,'ShowAddIncome'])->name('income.add');
+    Route::get('view/income/{user}',[RouteController::class,'ShowViewIncome'])->name('income.view');
+    Route::get('delete/income/{user}',[RouteController::class,'ShowDeleteIncome'])->name('income.delete');
+    Route::get('update/income/{user}',[RouteController::class,'ShowUpdateIncome'])->name('income.update');
     
 });
 

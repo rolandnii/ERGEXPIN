@@ -14,7 +14,7 @@
           <form class="pt-3" action="{{ route('login') }}" method="POST">
             @csrf
             <div class="form-group">
-              <input type="email" class="form-control form-control-lg" name="email"  placeholder="Email">
+              <input type="email" class="form-control form-control-lg" name="email" value="{{ old('email') }}"  placeholder="Email">
               <x-input-error :messages="$errors->get('email')" class="mt-2 text-danger" />
 
             </div>

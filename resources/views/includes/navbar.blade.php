@@ -1,7 +1,7 @@
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-      <a class="navbar-brand brand-logo mr-5" href="{{ url('') }}"><img src="images/logo.svg" class="mr-2" alt="logo"/></a>
-      <a class="navbar-brand brand-logo-mini" href="{{ url('') }}"><img src="images/logo-mini.svg" alt="logo"/></a>
+      <a class="navbar-brand brand-logo mr-5" href="{{ url('') }}"><img src="{{ asset('images/logo.svg') }}" class="mr-2" alt="logo"/></a>
+      <a class="navbar-brand brand-logo-mini" href="{{ url('') }}"><img src="{{ asset('images/logo-mini.svg') }}" alt="logo"/></a>
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
       <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -27,32 +27,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
             <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-            <a class="dropdown-item preview-item">
-              <div class="preview-thumbnail">
-                <div class="preview-icon bg-success">
-                  <i class="ti-info-alt mx-0"></i>
-                </div>
-              </div>
-              <div class="preview-item-content">
-                <h6 class="preview-subject font-weight-normal">Application Error</h6>
-                <p class="font-weight-light small-text mb-0 text-muted">
-                  Just now
-                </p>
-              </div>
-            </a>
-            <a class="dropdown-item preview-item">
-              <div class="preview-thumbnail">
-                <div class="preview-icon bg-warning">
-                  <i class="ti-settings mx-0"></i>
-                </div>
-              </div>
-              <div class="preview-item-content">
-                <h6 class="preview-subject font-weight-normal">Settings</h6>
-                <p class="font-weight-light small-text mb-0 text-muted">
-                  Private message
-                </p>
-              </div>
-            </a>
+           
             <a class="dropdown-item preview-item">
               <div class="preview-thumbnail">
                 <div class="preview-icon bg-info">
@@ -60,9 +35,8 @@
                 </div>
               </div>
               <div class="preview-item-content">
-                <h6 class="preview-subject font-weight-normal">New user registration</h6>
+                <h6 class="preview-subject font-weight-normal">No notifications</h6>
                 <p class="font-weight-light small-text mb-0 text-muted">
-                  2 days ago
                 </p>
               </div>
             </a>
