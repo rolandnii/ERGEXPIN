@@ -30,7 +30,7 @@ Route::middleware(['auth','verified'])->group( function () {
    // Income routes
     Route::get('add/income/',[RouteController::class,'ShowAddIncome'])->name("add.income");
     Route::get('view/income/{user}',[RouteController::class,'ShowViewIncome'])->name("view.income");
-    Route::get('delete/income/{user',[RouteController::class,'ShowDeleteIncome'])->name("delete.income");
+    Route::get('delete/income/{user}',[RouteController::class,'ShowDeleteIncome'])->name("delete.income");
     Route::get('update/income/{user}',[RouteController::class,'ShowUpdateIncome'])->name("update.income");
     
 });

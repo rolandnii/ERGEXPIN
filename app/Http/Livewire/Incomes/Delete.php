@@ -6,8 +6,24 @@ use Livewire\Component;
 
 class Delete extends Component
 {
-    public function render()
+    public $user;
+
+    public function remove()
     {
-        return view('livewire.incomes.delete');
+       
+        $this->user->delete();
+        session()->flash('message',true);
+        sleep(1);
+
+
+    }
+
+    public function render()
+
+    {
+       
+        return view('livewire.incomes.delete' ,[
+            'user' => $this->user
+        ]);
     }
 }

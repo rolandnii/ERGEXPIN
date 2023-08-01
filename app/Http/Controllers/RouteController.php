@@ -141,7 +141,7 @@ class RouteController extends Controller
 
     public function ShowDeleteIncome(Income $user)
     {
-        //done
+        //
         return view("modules.normal.income.income_delete", [
             'user' => $user
         ]);
@@ -149,7 +149,7 @@ class RouteController extends Controller
 
     public function ShowUpdateIncome(Income $user)
     {
-//done
+
         return view("modules.normal.income.income_update", [
             'user' => $user
         ]);
