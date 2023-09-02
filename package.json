@@ -18,6 +18,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
-        "air-datepicker": "^3.3.5"
+        "air-datepicker": "^3.3.5",
+        "chart.js": "^4.4.0"
     }
 }

@@ -7,7 +7,9 @@ use App\Models\Income;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Query\Builder;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\View\View;
 
 class RouteController extends Controller
 {
@@ -15,17 +17,20 @@ class RouteController extends Controller
     {
     }
 
-    public function ShowDashboard()
+    public function ShowDashboard(): View
     {
-        return view('dashboard');
+        if (auth()->user()->usertype == "admin") {
+            return view('admin');
+        }
+        return view('user');
     }
 
-    public function RedirectDashboard()
+    public function RedirectDashboard(): RedirectResponse
     {
         return redirect('dashboard');
     }
 
-    public function ShowExpense()
+    public function ShowExpense(): View
     {
 
         $query = Expense::query();
@@ -63,12 +68,12 @@ class RouteController extends Controller
         return view("modules.normal.expense.index", compact('latestExpenses', "stats", "totalamount", 'expenses'));
     }
 
-    public function ShowAddExpense()
+    public function ShowAddExpense(): View
     {
         return view("modules.normal.expense.expense_add");
     }
 
-    public function ShowViewExpense(Expense $user)
+    public function ShowViewExpense(Expense $user): View
     {
         //pending
         return view("modules.normal.expense.expense_view", [
@@ -76,7 +81,7 @@ class RouteController extends Controller
         ]);
     }
 
-    public function ShowDeleteExpense(Expense $user)
+    public function ShowDeleteExpense(Expense $user): View
     {
         //done
         return view("modules.normal.expense.expense_delete", [
@@ -84,7 +89,7 @@ class RouteController extends Controller
         ]);
     }
 
-    public function ShowUpdateExpense(Expense $user)
+    public function ShowUpdateExpense(Expense $user):  View
     {
 //done
         return view("modules.normal.expense.expense_update", [
@@ -94,7 +99,7 @@ class RouteController extends Controller
 
 
     //incomes
-    public function ShowIncome()
+    public function ShowIncome(): View 
     {
 
         $query = Income::query();
@@ -132,12 +137,12 @@ class RouteController extends Controller
     }
 
 
-    public function ShowAddIncome()
+    public function ShowAddIncome(): View
     {
         return view("modules.normal.income.income_add");
     }
 
-    public function ShowViewIncome(Income $user)
+    public function ShowViewIncome(Income $user): View
     {
         //pending
         return view("modules.normal.income.income_view", [
@@ -145,7 +150,7 @@ class RouteController extends Controller
         ]);
     }
 
-    public function ShowDeleteIncome(Income $user)
+    public function ShowDeleteIncome(Income $user): View
     {
         //
         return view("modules.normal.income.income_delete", [
@@ -153,7 +158,7 @@ class RouteController extends Controller
         ]);
     }
 
-    public function ShowUpdateIncome(Income $user)
+    public function ShowUpdateIncome(Income $user): View
     {
         return view("modules.normal.income.income_update", [
             'user' => $user
