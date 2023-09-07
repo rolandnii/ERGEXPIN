@@ -72,7 +72,7 @@
         <section class="col">
             <div class="card" data-aos="flip-up">
                 <div class="card-body text-gray-700">
-                    <h3 class="text-lg text-gray-700 font-semibold mb-3">Latest Incomes</h3>
+                    <h3 class="text-lg text-gray-700 font-semibold mb-3">Latest incomes</h3>
                     @foreach ($latestIncomes as $income)
                     <div class="bg-light p-4 rounded mb-3">
                         <div class="flex items-center justify-between">

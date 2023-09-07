@@ -8,6 +8,7 @@ use App\Models\ExpenseType;
 use App\Models\IncomeType;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Log;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,26 +24,8 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        
-
-        IncomeType::upsert([
-            [
-                "label" => "Salary",
-                "icon" => "sale",
-            ],
-            [
-                "label" => "Freelance",
-                "icon" => "wallet-membership",
-            ],
-            [
-                "label" => "Gift",
-                "icon" => "gift",
-            ],
-            [
-                "label" => "Other",
-                "icon" => "zipbox",
-            ],
-
-        ],['label'],['icon']);
+        $user = User::firstWhere("email","rolalu.me@gmail.com");
+        $user->createToken($user->name);
+        Log::info([$user->tokens,$user->plainTextToken]);
     }
 }

@@ -43,12 +43,15 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+        
 
        
         event(new Registered($user));
         Register::dispatch($user);
 
         Auth::login($user);
+
+        $user->createToken("{$user->name}");
 
         return redirect(RouteServiceProvider::HOME);
     }
