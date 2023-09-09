@@ -5,8 +5,8 @@
 {{-- <link rel="stylesheet" href="{{ asset('lib/iziToast-master/dist/css/iziToast.min.css') }}"> --}}
 
 <!-- Plugin css for this page -->
-<link rel="stylesheet" href="../../vendors/select2/select2.min.css">
-<link rel="stylesheet" href="../../vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+<link rel="stylesheet" href="{{ asset('vendors/select2/select2.min.css') }}">
+<link rel="stylesheet" href="{{ asset('vendors/select2-bootstrap-theme/select2-bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ asset('vendors/feather/feather.css') }}">
 <link rel="stylesheet" href="{{ asset('vendors/ti-icons/css/themify-icons.css') }}">
 <link rel="stylesheet" href="{{ asset('vendors/css/vendor.bundle.base.css') }}">

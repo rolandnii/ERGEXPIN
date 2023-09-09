@@ -16,12 +16,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::middleware(['auth','verified'])->group( function () {
+Route::middleware(['auth',])->group( function () {
     // Route::get('/',[RouteController::class,'RedirectDashboard']);
     Route::redirect('/','/dashboard');
     Route::get('/dashboard',[RouteController::class,'ShowDashboard'])->name('dashboard.main');
     Route::get('/expense',[RouteController::class,'ShowExpense'])->name('expense.main');
     Route::get('income',[RouteController::class,'ShowIncome'])->name('income.main');
+    Route::get('user',[RouteController::class,"ShowUser"])->name("user")->middleware("admin");
+
 
     // Expense routes
     Route::get('add/expense/',[RouteController::class,'ShowAddExpense'])->name('expense.add');

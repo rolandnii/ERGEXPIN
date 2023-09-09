@@ -173,7 +173,7 @@ class StatsController extends Controller
                 "ok" => false,
                 "income" => [],
                 "expense" => [],
-            ]);
+            ],500);
         }
     }
 }

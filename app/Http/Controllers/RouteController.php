@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Expense;
 use App\Models\ExpenseIncome;
 use App\Models\Income;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Query\Builder;
@@ -24,9 +25,20 @@ class RouteController extends Controller
     public function ShowDashboard(): View
     {
         $user = Auth::user();
-        if ($user->usertype == "admin") {
-            return view('admin');
+        if ($user->user_type == "admin") {
+            $totalUsers = User::withTrashed()->count("id");
+            $expenseRecordings = Expense::count("id");
+            $incomeRecordings = Income::count("id");
+            $deletedUsers = User::where("deleted_at","!=",null)->withTrashed()->count();
+            $activeUsers = User::count();  
+            $users = User::withTrashed()->take(5)->orderByDesc("created_at")->get();
+
+            return view('admin', compact("expenseRecordings","totalUsers","incomeRecordings","deletedUsers","activeUsers","users"));
         }
+
+
+
+        //User side 
         //Getting values for  the four cards
         $expenses = Expense::where("user_id", $user->id)
             ->sum("exp_amount");
@@ -218,5 +230,12 @@ class RouteController extends Controller
         return view("modules.normal.income.income_update", [
             'user' => $user
         ]);
+    }
+
+
+    //Admin Methods
+    public function ShowUser(): View
+    {
+        return view("modules.admin.user.index");
     }
 }

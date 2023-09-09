@@ -17,7 +17,7 @@
         </section>
     </div>
 
-    <div class="row row-cols-1 row-cols-md-2 my-10">
+    <div class="row row-cols-1 gap-3 lg:gap-2 row-cols-md-2 my-10">
         <section class="col">
 
             <div class="card" data-aos="flip-up">

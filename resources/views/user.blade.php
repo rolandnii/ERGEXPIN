@@ -88,7 +88,7 @@
     </section>
 
     <section>
-        <div class="grid gap-3 lg:gap-2 grid-cols-4">
+        <div class="grid gap-3 grid-cols-2 lg:gap-2 lg:grid-cols-4">
             <div class="card col-span-2">
                 <div class="card-body">
                     <h3 class="font-bold text-gray-700">Total income and expense chart</h3>

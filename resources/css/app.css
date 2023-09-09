@@ -12,6 +12,15 @@
         background: rgb(31, 31, 31)
         ;
     }
+
+    .classic-gradient {
+        background-image: 
+          radial-gradient(
+            farthest-corner circle at 100% 0%, 
+            #00dfff 0%, #8c00ea 100%
+          )
+        ;
+      }
   
 }
 
