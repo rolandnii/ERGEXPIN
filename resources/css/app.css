@@ -6,4 +6,26 @@
     .sidebar .nav .nav-item .nav-link.hover:hover{ 
         @apply transition-colors duration-300 ease-out
     }
+
+    .sidebar .nav .nav-item.nothing.active > .nav-link.hover{ 
+        color: red !important;
+        background: rgb(31, 31, 31)
+        ;
+    }
+
+    .classic-gradient {
+        background-image: 
+          radial-gradient(
+            farthest-corner circle at 100% 0%, 
+            #00dfff 0%, #8c00ea 100%
+          )
+        ;
+      }
+  
+}
+
+@layer base {
+    * {
+        font-family: Nunito, sans-serif;
+    }
 }

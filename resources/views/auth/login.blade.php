@@ -7,14 +7,14 @@
       <div class="col-lg-4 mx-auto">
         <div class="auth-form-light text-left py-5 px-4 px-sm-5">
           <div class="brand-logo">
-            <img src="../../images/logo.svg" alt="logo">
+            <img src="{{ asset('images/expin.png') }}" alt="logo" class="w-2">
           </div>
           <h4>Hello! let's get started</h4>
           <h6 class="font-weight-light">Sign in to continue.</h6>
           <form class="pt-3" action="{{ route('login') }}" method="POST">
             @csrf
             <div class="form-group">
-              <input type="email" class="form-control form-control-lg" name="email"  placeholder="Email">
+              <input type="email" class="form-control form-control-lg" name="email" value="{{ old('email') }}"  placeholder="Email">
               <x-input-error :messages="$errors->get('email')" class="mt-2 text-danger" />
 
             </div>

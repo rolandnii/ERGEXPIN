@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Events\Register;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
@@ -31,7 +32,7 @@ class RegisteredUserController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            // 'agree' => ['required'],
+            'agree' => ['required'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required',  Rules\Password::defaults()],
@@ -42,10 +43,15 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+        
 
+       
         event(new Registered($user));
+        Register::dispatch($user);
 
         Auth::login($user);
+
+        $user->createToken("{$user->name}");
 
         return redirect(RouteServiceProvider::HOME);
     }

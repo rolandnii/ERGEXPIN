@@ -8,7 +8,7 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <div class="brand-logo">
-                <img src="../../images/logo.svg" alt="logo">
+            <img src="{{ asset('images/expin.png') }}" alt="logo" class="w-2">
               </div>
               <h4>New here?</h4>
               <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
@@ -31,10 +31,10 @@
                 <div class="mb-4">
                   <div class="form-check">
                     <label class="form-check-label text-muted">
-                      <input type="checkbox" name="agree" value="{{ old('agree') }}" class="form-check-input">
+                      <input type="checkbox" name="agree" value="1" class="form-check-input">
                       I agree to all Terms & Conditions
                     </label>
-            <x-input-error :messages="$errors->get('agree')" class="mt-2 text-danger" />
+            <x-input-error messages="Please agree to the terms to create an account" class="mt-2 text-danger" />
 
                   </div>
                 </div>
