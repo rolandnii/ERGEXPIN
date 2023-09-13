@@ -238,4 +238,39 @@ class RouteController extends Controller
     {
         return view("modules.admin.user.index");
     }
+
+
+    //User Methods
+
+    public function ShowDeleteUser($user_id) : View
+    {
+        $user = User::withTrashed()
+        ->find($user_id)
+       ;
+        return view("modules.admin.user.delete", [
+            "user" => $user,
+        ]);
+    }
+
+    public function ShowViewUser($user_id): View
+    {
+        $user = User::withTrashed()
+        ->find($user_id)
+        ;
+        return view("modules.admin.user.view" ,[
+            "user" => $user,
+        ]);
+    }
+
+    public function ShowUpdateUser($user_id): View
+    {
+        $user = User::withTrashed()
+        ->find($user_id)
+        ;
+        return view("modules.admin.user.update" ,[
+            "user" => $user,
+        ]);
+    }
+
+
 }

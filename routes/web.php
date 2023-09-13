@@ -35,6 +35,12 @@ Route::middleware(['auth',])->group( function () {
     Route::get('view/income/{user}',[RouteController::class,'ShowViewIncome'])->name('income.view');
     Route::get('delete/income/{user}',[RouteController::class,'ShowDeleteIncome'])->name('income.delete');
     Route::get('update/income/{user}',[RouteController::class,'ShowUpdateIncome'])->name('income.update');
+
+    //Admin user module routes
+    Route::get('add/user/',[RouteController::class,'ShowAddIncome'])->name('user.add');
+    Route::get('view/user/{user_id}',[RouteController::class,'ShowViewUser'])->name('user.view');
+    Route::get('delete/user/{user_id}',[RouteController::class,'ShowDeleteUser'])->name('user.delete');
+    Route::get('update/user/{user_id}',[RouteController::class,'ShowUpdateUser'])->name('user.update');
     
 });
 

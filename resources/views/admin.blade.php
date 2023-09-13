@@ -103,7 +103,7 @@
         </div>
     </section>
 
-    <section class="w-full">
+    <section class="w-full mb-5">
         <div class="card">
             <div class="card-body">
                 <h3 class="text-gray-700 font-bold mb-3">Users</h3>
@@ -112,8 +112,8 @@
                         <button class="btn btn-sm btn-primary">View all</button>
                     </a>
                 </div>
-                <div class="responsive">
-                    <table class="w-full table-auto border-spacing-1 border-separate">
+                <div class="overfl overflow-y-auto w-full">
+                    <table class="table-auto border-spacing-1 border-separate w-full">
                         <thead>
                             <th class="bg-red-50 p-2 rounded-sm text-gray-600">Name</th>
                             <th class="bg-red-50 p-2 rounded-sm text-gray-600">Email</th>
